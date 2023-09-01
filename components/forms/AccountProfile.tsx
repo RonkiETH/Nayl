@@ -8,12 +8,12 @@ import { ChangeEvent, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -67,12 +67,12 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     }
 
     await updateUser({
-      userId: user.id,
-      username: values.username,
       name: values.name,
+      path: pathname,
+      username: values.username,
+      userId: user.id,
       bio: values.bio,
       image: values.profile_photo,
-      path: pathname,
     });
 
     if (pathname === "/profile/edit") {
